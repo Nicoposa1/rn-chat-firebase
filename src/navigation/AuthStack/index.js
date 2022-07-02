@@ -7,15 +7,15 @@ import Home from "../../screens/Home";
 
 const Stack = createStackNavigator();
 
-const ChatStack = () => {
+const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="Home"
+      initialRouteName="Login"
     >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Chat" component={Chat} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Signup" component={Signup} />
     </Stack.Navigator>
   );
 };
-export default ChatStack;
+export default AuthStack;
