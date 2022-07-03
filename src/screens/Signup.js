@@ -18,13 +18,12 @@ const Signup = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const onHandleSignup = () => {
-    if (email !== "" && password !== "") {
-      createUserWithEmailAndPassword(email, password)
-        .then(() => console.log("Signup success"))
-        .catch((error) => console.log("Signup error", error));
+    if (email !== '' && password !== '') {
+  createUserWithEmailAndPassword(auth, email, password)
+        .then(() => console.log('Signup success'))
+        .catch((err) => Alert.alert("Login error", err.message));
     }
   };
-
   return (
     <View style={styles.container}>
       <Image source={backImage} style={styles.backImage} />
@@ -57,10 +56,10 @@ const Signup = ({ navigation }) => {
         </TouchableOpacity>
         <View style={{marginTop: 20, flexDirection: "row", alignItems:"center", alignSelf: "center"}} >
           <Text style={{ color: "gray", fontWeight: "600", fontSize: 14 }}>
-            Don't have an account? 
+            You already have an account?
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-            <Text style={{color: "#f57c00", fontWeight: "600", fontSize: 14}}> Sign Up</Text>
+            <Text style={{color: "#f57c00", fontWeight: "600", fontSize: 14}}> Login</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
