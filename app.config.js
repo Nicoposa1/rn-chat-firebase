@@ -1,7 +1,7 @@
 import "dotenv/config";
 export default {
   expo: {
-    name: "rn-chat",
+    name: "Nico chat App",
     slug: "rn-chat",
     version: "1.0.0",
     orientation: "portrait",
@@ -19,6 +19,8 @@ export default {
       supportsTablet: true,
     },
     android: {
+      "package": "com.nicoposa1.nicochatapp",
+      "versionCode": 1,
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
         backgroundColor: "#FFFFFF",
