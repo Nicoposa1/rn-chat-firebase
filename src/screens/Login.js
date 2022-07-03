@@ -19,9 +19,9 @@ const Login = ({ navigation }) => {
 
   const onHandleLogin = () => {
     if (email !== "" && password !== "") {
-      signInWithEmailAndPassword(email, password)
-        .then(() => console.log("Login Success"))
-        .catch((error) => console.log("login error", error));
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => console.log("Login success"))
+        .catch((err) => Alert.alert("Login error", err.message));
     }
   };
 
@@ -55,12 +55,22 @@ const Login = ({ navigation }) => {
             Log In
           </Text>
         </TouchableOpacity>
-        <View style={{marginTop: 20, flexDirection: "row", alignItems:"center", alignSelf: "center"}} >
+        <View
+          style={{
+            marginTop: 20,
+            flexDirection: "row",
+            alignItems: "center",
+            alignSelf: "center",
+          }}
+        >
           <Text style={{ color: "gray", fontWeight: "600", fontSize: 14 }}>
-            Don't have an account? 
+            Don't have an account?
           </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-            <Text style={{color: "#f57c00", fontWeight: "600", fontSize: 14}}> Sign Up</Text>
+            <Text style={{ color: "#f57c00", fontWeight: "600", fontSize: 14 }}>
+              {" "}
+              Sign Up
+            </Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
